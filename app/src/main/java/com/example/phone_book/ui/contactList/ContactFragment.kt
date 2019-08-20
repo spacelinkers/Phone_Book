@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.phone_book.R
+import com.example.phone_book.util.ContactAdapter
+import com.example.phone_book.util.DataProvider
+import kotlinx.android.synthetic.main.contact_fragment.*
 
 class ContactFragment : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,5 +18,12 @@ class ContactFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.contact_fragment, container, false)
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val contactList = DataProvider.contactList
+        contact_list_recycler_view.adapter = ContactAdapter(contactList)
     }
 }
