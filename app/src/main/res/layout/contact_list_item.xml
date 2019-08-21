@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_contact"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="50dp" android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="90dp" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

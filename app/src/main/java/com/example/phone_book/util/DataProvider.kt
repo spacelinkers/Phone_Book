@@ -10,53 +10,78 @@ class DataProvider {
             val contacts = mutableListOf<ContactModel>()
 
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan1", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
             contacts.add(
-                ContactModel(
-                    "Hasan",
-                    "Molla",
-                    "111"
+                ContactModel("Hasan", "Molla", "111"
                 ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("Hasan", "Molla", "111"
+                ))
+            contacts.add(
+                ContactModel("HasanF", "Molla", "111"
+                ))
+
             return contacts
         }
 
