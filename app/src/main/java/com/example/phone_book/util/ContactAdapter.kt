@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.phone_book.R
-import com.example.phone_book.data.model.ContactModel
+import com.example.phone_book.data.model.Contact
 import kotlinx.android.synthetic.main.contact_list_item.view.*
 
-class ContactAdapter(private val contactList: List<ContactModel>)
+class ContactAdapter(private val contactList: List<Contact>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -25,7 +25,7 @@ class ContactAdapter(private val contactList: List<ContactModel>)
     }
 
     class ViewHolder(contactView: View): RecyclerView.ViewHolder(contactView){
-        fun bindContact(contact: ContactModel) = with(itemView){
+        fun bindContact(contact: Contact) = with(itemView){
             contact_name_textView.text = contact.firstName
         }
     }
