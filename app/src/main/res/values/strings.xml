@@ -3,4 +3,7 @@
     <string name="title_contact">Contacts</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_favourite">Favourites</string>
+
+    <!-- Details page -->
+    <string name="edit_contact">Edit Contact</string>
 </resources>
