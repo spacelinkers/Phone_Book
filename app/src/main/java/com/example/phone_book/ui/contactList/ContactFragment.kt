@@ -30,9 +30,13 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
     }
 
     override fun onItemClick(contact: Contact, itemview: View) {
+        val fragment = DetailsFragment()
+        val infoBundle = Bundle()
+        infoBundle.putInt(getString(R.string.CONTACT_ID), contact.id)
+        fragment.arguments = infoBundle
         fragmentManager!!
             .beginTransaction()
-            .replace(R.id.fragment_container, DetailsFragment(), DetailsFragment().javaClass.simpleName)
+            .replace(R.id.fragment_container, fragment, fragment.javaClass.simpleName)
             .commit()
     }
 }

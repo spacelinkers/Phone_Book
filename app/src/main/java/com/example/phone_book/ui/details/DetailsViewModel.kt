@@ -1,6 +1,7 @@
 package com.example.phone_book.ui.details
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,6 +18,7 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
         val contactDetails = Transformations.switchMap<Int, Contact>(contactId){id->
             contactRepository.findContact(id)
         }
+        Log.i("AAA", ""+ contactDetails.value)
         return contactDetails
     }
 }
