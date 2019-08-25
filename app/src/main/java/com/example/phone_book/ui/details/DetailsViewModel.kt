@@ -6,12 +6,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import com.example.phone_book.ContactApp
 import com.example.phone_book.data.model.Contact
-import com.example.phone_book.data.model.Repository
 
 class DetailsViewModel(application: Application) : AndroidViewModel(application) {
     private val contactId = MutableLiveData<Int>()
-    private val contactRepository = Repository(getApplication())
+    private val contactRepository = getApplication<ContactApp>().getRepository()
 
     fun getContactDetails(id: Int): LiveData<Contact>{
         contactId.value = id
