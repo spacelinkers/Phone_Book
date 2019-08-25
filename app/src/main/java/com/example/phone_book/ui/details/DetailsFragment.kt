@@ -38,7 +38,7 @@ class DetailsFragment : Fragment() {
     }
 
     private fun populateContactDetails(contact: Contact?){
-        details_name.text = contact?.firstName + contact?.lastName
+        details_name.text = contact?.firstName + " " + contact?.lastName
         details_contact_text_view.text = contact?.phone
     }
 }
