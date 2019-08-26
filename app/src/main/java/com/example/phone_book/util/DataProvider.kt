@@ -1,85 +1,85 @@
 package com.example.phone_book.util
 
-import com.example.phone_book.data.model.ContactModel
+import com.example.phone_book.data.model.Contact
 
 class DataProvider {
     companion object{
-        val contactList = initContactList()
+        var contactList = initContactList()
 
-        private fun initContactList(): MutableList<ContactModel>{
-            val contacts = mutableListOf<ContactModel>()
+        private fun initContactList(): MutableList<Contact>{
+            var contacts = mutableListOf<Contact>()
 
             contacts.add(
-                ContactModel("Hasan1", "Molla", "111"
+                Contact("Hasan1", "Molla", "111",1
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan2", "Molla", "111",2
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan3", "Molla", "111",3
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan4", "Molla", "111",4
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan5", "Molla", "111",5
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan6", "Molla", "111",6
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan7", "Molla", "111",7
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan8", "Molla", "111",8
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan9", "Molla", "111",9
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan10", "Molla", "111",10
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan11", "Molla", "111",11
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan12", "Molla", "111",12
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan13", "Molla", "111",13
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan14", "Molla", "111",14
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan15", "Molla", "111",15
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan16", "Molla", "111",16
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan17", "Molla", "111",17
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan18", "Molla", "111",18
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan19", "Molla", "111",19
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan20", "Molla", "111",20
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan21", "Molla", "111",21
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan22", "Molla", "111",22
                 ))
             contacts.add(
-                ContactModel("Hasan", "Molla", "111"
+                Contact("Hasan23", "Molla", "111",23
                 ))
             contacts.add(
-                ContactModel("HasanF", "Molla", "111"
+                Contact("HasanF", "Molla", "111",24
                 ))
 
             return contacts
