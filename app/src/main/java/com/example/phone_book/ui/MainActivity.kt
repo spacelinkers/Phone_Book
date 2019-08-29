@@ -3,6 +3,10 @@ package com.example.phone_book
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.phone_book.ui.contactList.ContactFragment
 import com.example.phone_book.ui.favouriteList.FavouriteFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -40,12 +44,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val fragment = ContactFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment, fragment.javaClass.simpleName)
-            .commit()
+        val navController: NavController = findNavController(R.id.fragment_container)
+
+
+//        val fragment = ContactFragment()
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.fragment_container, fragment, fragment.javaClass.simpleName)
+//            .commit()
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        navView.setupWithNavController(navController)
     }
 }
