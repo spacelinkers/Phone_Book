@@ -11,9 +11,16 @@
         <action
                 android:id="@+id/action_contactFragment_to_favouriteFragment"
                 app:destination="@id/favouriteFragment" />
+        <action
+                android:id="@+id/action_contactFragment_to_detailsFragment"
+                app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
             android:id="@+id/favouriteFragment"
             android:name="com.example.phone_book.ui.favouriteList.FavouriteFragment"
             android:label="FavouriteFragment" />
+    <fragment
+            android:id="@+id/detailsFragment"
+            android:name="com.example.phone_book.ui.details.DetailsFragment"
+            android:label="DetailsFragment" />
 </navigation>
