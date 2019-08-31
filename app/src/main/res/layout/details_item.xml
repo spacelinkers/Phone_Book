@@ -66,6 +66,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="@string/edit_contact"
+            android:drawableTop="@drawable/ic_edit"
             android:background="@drawable/outline_semi_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

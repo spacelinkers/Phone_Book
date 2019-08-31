@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.phone_book.R
 import com.example.phone_book.data.model.Contact
 import com.example.phone_book.ui.details.DetailsFragment
@@ -43,13 +44,8 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
     }
 
     override fun onItemClick(contact: Contact, itemview: View) {
-        val fragment = DetailsFragment()
         val infoBundle = Bundle()
         infoBundle.putInt(getString(R.string.CONTACT_ID), contact.id)
-        fragment.arguments = infoBundle
-        fragmentManager!!
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment, fragment.javaClass.simpleName)
-            .commit()
+        findNavController().navigate(R.id.action_contactFragment_to_detailsFragment, infoBundle)
     }
 }
