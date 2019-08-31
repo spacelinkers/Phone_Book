@@ -17,15 +17,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupNavigation()
-
-    }
-
-    private fun setupNavigation(){
         // BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
         // NavController
         val navController: NavController = findNavController(R.id.fragment_container)
+
+        setupNavigation(bottomNavigationView, navController)
+
+        fab.setOnClickListener{
+            navController.navigate(R.id.addContactFragment)
+        }
+
+    }
+
+    private fun setupNavigation(bottomNavigationView: BottomNavigationView, navController: NavController){
         // Integrating BottomNavigationView and NavController
         bottomNavigationView.setupWithNavController(navController)
 
