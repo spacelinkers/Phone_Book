@@ -1,5 +1,6 @@
 package com.example.phone_book.ui.details
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -35,10 +36,16 @@ class DetailsFragment : Fragment() {
                 populateContactDetails(contactDetails)
             })
         }
+
+        dialInit()
     }
 
     private fun populateContactDetails(contact: Contact?){
         details_name.text = contact?.firstName + " " + contact?.lastName
         details_contact_text_view.text = contact?.phone
+    }
+
+    private fun dialInit(){
+
     }
 }
