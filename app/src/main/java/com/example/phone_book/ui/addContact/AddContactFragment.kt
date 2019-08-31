@@ -41,12 +41,16 @@ class AddContactFragment : Fragment() {
             last_name_edit_text.editableText.toString(),
             contact_edit_text.editableText.toString()
         )
-        val id = addContactViewModel.addContact(contact)
+        if(first_name_edit_text.text.toString()=="" || last_name_edit_text.toString()==""||contact_edit_text.toString()==""){
+            Navigation.findNavController(view!!).navigateUp()
+            Log.d("AAA", "Empty")
+        }
+        else{
+            addContactViewModel.addContact(contact)
+            Log.d("AAA", "Full")
+            Navigation.findNavController(view!!).navigateUp()
+        }
 
-        Log.d("AAA", ""+ id.toString())
-
-
-        Navigation.findNavController(view!!).navigateUp()
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.phone_book.ui.details
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,10 +35,9 @@ class DetailsFragment : Fragment() {
         contactId?.let {
             detailsViewModel.getContactDetails(contactId).observe(this, Observer { contactDetails ->
                 populateContactDetails(contactDetails)
+                dialInit(contactDetails)
             })
         }
-
-        dialInit()
     }
 
     private fun populateContactDetails(contact: Contact?){
@@ -45,7 +45,11 @@ class DetailsFragment : Fragment() {
         details_contact_text_view.text = contact?.phone
     }
 
-    private fun dialInit(){
-
+    private fun dialInit(contact: Contact){
+        dial_button.setOnClickListener{
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:${contact.phone}")
+            context?.startActivity(dialIntent)
+        }
     }
 }

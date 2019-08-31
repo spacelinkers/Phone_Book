@@ -43,9 +43,9 @@
             android:layout_width="21dp"
             android:layout_height="28dp"
             android:layout_marginStart="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/materialButton"
-            app:layout_constraintStart_toStartOf="@+id/materialButton"
-            app:layout_constraintTop_toTopOf="@+id/materialButton"
+            app:layout_constraintBottom_toBottomOf="@+id/dial_button"
+            app:layout_constraintStart_toStartOf="@+id/dial_button"
+            app:layout_constraintTop_toTopOf="@+id/dial_button"
             app:srcCompat="@drawable/ic_call" />
 
     <TextView
@@ -62,7 +62,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/dial_button"
             style="@style/DialButton"
             android:layout_width="0dp"
             android:layout_height="70dp"
