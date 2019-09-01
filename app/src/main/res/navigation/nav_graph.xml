@@ -17,6 +17,9 @@
         <action
                 android:id="@+id/action_navigation_contact_to_addContactFragment"
                 app:destination="@id/addContactFragment" />
+        <action
+                android:id="@+id/action_navigation_contact_to_searchFragment"
+                app:destination="@id/searchFragment" />
     </fragment>
     <fragment
             android:id="@+id/navigation_favourite"
@@ -25,6 +28,9 @@
         <action
                 android:id="@+id/action_navigation_favourite_to_addContactFragment"
                 app:destination="@id/addContactFragment" />
+        <action
+                android:id="@+id/action_navigation_favourite_to_searchFragment"
+                app:destination="@id/searchFragment" />
     </fragment>
     <fragment
             android:id="@+id/detailsFragment"
@@ -34,4 +40,8 @@
             android:id="@+id/addContactFragment"
             android:name="com.example.phone_book.ui.addContact.AddContactFragment"
             android:label="AddContactFragment" />
+    <fragment
+            android:id="@+id/searchFragment"
+            android:name="com.example.phone_book.ui.search.SearchFragment"
+            android:label="SearchFragment" />
 </navigation>
