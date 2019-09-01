@@ -52,8 +52,8 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
     }
 
     private fun populateContactList(contactList: List<Contact>){
-        recyclerView.addItemDecoration(SpacingLastDecorator())
         recyclerView.adapter = ContactAdapter(contactList, this)
+        recyclerView.addItemDecoration(SpacingLastDecorator())
     }
 
     override fun onItemClick(contact: Contact, itemview: View) {

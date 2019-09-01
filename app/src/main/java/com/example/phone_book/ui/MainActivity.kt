@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         // NavController
         val navController: NavController = findNavController(R.id.fragment_container)
 
+        //NavigationUI.setupWithNavController(bottomAppbar, navController)
+        //NavigationUI.setupWithNavController(bottomNavigationView, navController)
         setupNavigation(bottomNavigationView, navController)
 
         fab.setOnClickListener{
@@ -46,9 +49,9 @@ class MainActivity : AppCompatActivity() {
                 bottomNavigationView.visibility = View.GONE
 
             } else {
+                bottomNavigationView.visibility = View.VISIBLE
                 bottom_bar.visibility = View.VISIBLE
                 fab.visibility = View.VISIBLE
-                bottomNavigationView.visibility = View.VISIBLE
             }
         }
     }

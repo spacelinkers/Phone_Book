@@ -32,7 +32,7 @@ class ContactAdapter(
 
     class ViewHolder(contactView: View): RecyclerView.ViewHolder(contactView){
         fun bindContact(contact: Contact, listener: OnItemCickListener) = with(itemView){
-            contact_name_textView.text = contact.firstName
+            contact_name_textView.text = contact.firstName + " " + contact.lastName
             contact_list_layout.setOnClickListener{
                 listener.onItemClick(contact, itemView)
             }

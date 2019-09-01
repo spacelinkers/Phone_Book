@@ -9,7 +9,7 @@ import com.example.phone_book.data.model.Contact
 
 @Dao
 interface ContactDao {
-    @Query("SELECT * FROM Contact ORDER BY id DESC")
+    @Query("SELECT * FROM Contact ORDER BY firstName")
     fun getAll(): LiveData<List<Contact>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

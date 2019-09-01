@@ -33,6 +33,7 @@
                 app:hideOnScroll="true" />
 
         <FrameLayout
+                android:id="@+id/nav_view_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
