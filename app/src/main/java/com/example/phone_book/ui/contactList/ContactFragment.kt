@@ -8,16 +8,21 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.phone_book.R
 import com.example.phone_book.data.model.Contact
 import com.example.phone_book.ui.details.DetailsFragment
 import com.example.phone_book.util.ContactAdapter
 import com.example.phone_book.util.DataProvider
+import com.example.phone_book.util.SpacingLastDecorator
 import kotlinx.android.synthetic.main.contact_fragment.*
+
+
 
 class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
 
     private lateinit var contactListViewModel: ContactListViewModel
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +37,8 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recyclerView = view.findViewById(R.id.contact_list_recycler_view)
+
         contactListViewModel.getContactList().observe(this, Observer<List<Contact>> { contacts ->
             contacts?.let {
                 populateContactList(contacts)
@@ -45,7 +52,8 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
     }
 
     private fun populateContactList(contactList: List<Contact>){
-        contact_list_recycler_view.adapter = ContactAdapter(contactList, this)
+        recyclerView.addItemDecoration(SpacingLastDecorator())
+        recyclerView.adapter = ContactAdapter(contactList, this)
     }
 
     override fun onItemClick(contact: Contact, itemview: View) {
