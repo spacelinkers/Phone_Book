@@ -10,14 +10,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.phone_book.R
 import com.example.phone_book.data.model.Contact
 import kotlinx.android.synthetic.main.add_fragment.*
-import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
-import android.view.MotionEvent
 import android.view.View.OnTouchListener
 
 
