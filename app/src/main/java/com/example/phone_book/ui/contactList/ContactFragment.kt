@@ -37,6 +37,11 @@ class ContactFragment : Fragment(), ContactAdapter.OnItemCickListener{
                 populateContactList(contacts)
             }
         })
+
+        // navigate to search fragment.
+        search_bar.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_contact_to_searchFragment)
+        }
     }
 
     private fun populateContactList(contactList: List<Contact>){
