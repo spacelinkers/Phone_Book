@@ -35,10 +35,16 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if(destination.id == R.id.detailsFragment){
+            if(destination.id == R.id.detailsFragment) {
                 bottom_bar.visibility = View.GONE
                 fab.visibility = View.GONE
                 bottomNavigationView.visibility = View.GONE
+
+            } else if (destination.id == R.id.addContactFragment){
+                bottom_bar.visibility = View.GONE
+                fab.visibility = View.GONE
+                bottomNavigationView.visibility = View.GONE
+
             } else {
                 bottom_bar.visibility = View.VISIBLE
                 fab.visibility = View.VISIBLE

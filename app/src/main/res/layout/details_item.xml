@@ -6,16 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-            android:id="@+id/details_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_pic_demo" />
-
     <ImageButton
             android:id="@+id/add_favourtie_image_button"
             android:layout_width="wrap_content"
@@ -26,6 +16,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_favourite" />
+
+    <ImageView
+            android:id="@+id/details_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_pic_demo" />
 
     <TextView
             android:id="@+id/details_name"
@@ -38,56 +38,53 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/details_image_view" />
 
-    <TextView
-            android:id="@+id/details_contact_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="TextView"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            app:layout_constraintBottom_toBottomOf="@+id/call_image_view"
-            app:layout_constraintStart_toEndOf="@+id/call_image_view"
-            app:layout_constraintTop_toTopOf="@+id/call_image_view" />
-
     <ImageView
             android:id="@+id/call_image_view"
             android:layout_width="21dp"
             android:layout_height="28dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line_saperator"
+            app:layout_constraintBottom_toBottomOf="@+id/dial_button"
+            app:layout_constraintStart_toStartOf="@+id/dial_button"
+            app:layout_constraintTop_toTopOf="@+id/dial_button"
             app:srcCompat="@drawable/ic_call" />
 
-    <Button
+    <TextView
+                android:id="@+id/details_contact_text_view"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/call_image_view"
+                app:layout_constraintStart_toEndOf="@+id/call_image_view"
+                app:layout_constraintTop_toTopOf="@+id/call_image_view"
+                app:layout_constraintVertical_bias="0.571" />
+
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/dial_button"
+            style="@style/DialButton"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_name"/>
+
+    <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="@string/edit_contact"
-            android:drawableTop="@drawable/ic_edit"
-            android:background="@drawable/outline_semi_circle"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_edit"
+            style="@style/MyButton"
+            android:textSize="16dp"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-            android:id="@+id/line_saperator"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/details_name"
-            app:srcCompat="@drawable/line" />
-
-    <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/call_image_view"
-            app:srcCompat="@drawable/line" />
 </androidx.constraintlayout.widget.ConstraintLayout>
