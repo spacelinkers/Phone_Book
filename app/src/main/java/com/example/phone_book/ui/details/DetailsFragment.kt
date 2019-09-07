@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.phone_book.R
 import com.example.phone_book.data.model.Contact
 import kotlinx.android.synthetic.main.details_item.*
@@ -30,13 +31,19 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val contactId = arguments?.getInt(getString(R.string.CONTACT_ID))
+        val contactId = arguments!!.getInt(getString(R.string.CONTACT_ID))
         Log.d("AAA", ""+ contactId.toString())
-        contactId?.let {
+        contactId.let {
             detailsViewModel.getContactDetails(contactId).observe(this, Observer { contactDetails ->
                 populateContactDetails(contactDetails)
                 dialInit(contactDetails)
             })
+        }
+
+        edit_contact_button.setOnClickListener{
+            val infoBundle = Bundle()
+            infoBundle.putInt(getString(R.string.CONTACT_ID), contactId)
+            findNavController().navigate(R.id.action_detailsFragment_to_editFragment, infoBundle)
         }
     }
 
