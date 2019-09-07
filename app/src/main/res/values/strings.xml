@@ -7,4 +7,6 @@
     <!-- Details page -->
     <string name="edit_contact">Edit Contact</string>
     <string name="CONTACT_ID">CONTACT_ID</string>
+
+    <string name="create_contact">Create Contact</string>
 </resources>

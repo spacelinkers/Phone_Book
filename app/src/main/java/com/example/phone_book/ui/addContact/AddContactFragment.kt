@@ -15,6 +15,7 @@ import com.example.phone_book.data.model.Contact
 import kotlinx.android.synthetic.main.add_fragment.*
 import android.view.inputmethod.InputMethodManager
 import android.view.View.OnTouchListener
+import android.widget.TextView
 
 
 class AddContactFragment : Fragment() {
@@ -34,6 +35,9 @@ class AddContactFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var titleText: TextView = view.findViewById(R.id.contact_title)
+        titleText.setText(getString(R.string.create_contact));
 
         //close keyboard after touching any where in layout.
         add_fragment_layout.setOnTouchListener( OnTouchListener{ view, ev ->

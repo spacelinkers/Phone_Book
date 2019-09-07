@@ -8,12 +8,12 @@
         android:layout_height="match_parent">
 
     <TextView
-            android:id="@+id/create_contact_title"
+            android:id="@+id/contact_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="Create Contact"
+            tools:text="Create Contact"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/create_contact_title"
+            app:layout_constraintTop_toBottomOf="@+id/contact_title"
             app:srcCompat="@drawable/line" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

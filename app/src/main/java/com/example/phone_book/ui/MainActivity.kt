@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // BottomNavigationView
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
+        //BottomAppBar
+        val bottomAppBar = findViewById<BottomAppBar>(R.id.bottom_bar)
         // NavController
-        val navController: NavController = findNavController(R.id.fragment_container)
+        val navController = findNavController(R.id.fragment_container)
 
-        //NavigationUI.setupWithNavController(bottomAppbar, navController)
-        //NavigationUI.setupWithNavController(bottomNavigationView, navController)
-        setupNavigation(bottomNavigationView, navController)
+        setupNavigation(bottomNavigationView, bottomAppBar, navController)
 
         fab.setOnClickListener{
             navController.navigate(R.id.addContactFragment)
@@ -33,17 +34,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setupNavigation(bottomNavigationView: BottomNavigationView, navController: NavController){
-        // Integrating BottomNavigationView and NavController
+    private fun setupNavigation(bottomNavigationView: BottomNavigationView, bottomAppBar: BottomAppBar, navController: NavController){
+        //NavigationUI.setupWithNavController(bottomAppBar, navController)
+        //NavigationUI.setupWithNavController(bottomNavigationView, navController)
+        //Integrating BottomNavigationView and NavController
         bottomNavigationView.setupWithNavController(navController)
+        //bottomAppBar.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if(destination.id == R.id.detailsFragment) {
-                bottom_bar.visibility = View.GONE
-                fab.visibility = View.GONE
-                bottomNavigationView.visibility = View.GONE
-
-            } else if (destination.id == R.id.addContactFragment){
+            if(destination.id == R.id.detailsFragment || destination.id == R.id.addContactFragment
+                || destination.id == R.id.editFragment) {
                 bottom_bar.visibility = View.GONE
                 fab.visibility = View.GONE
                 bottomNavigationView.visibility = View.GONE
