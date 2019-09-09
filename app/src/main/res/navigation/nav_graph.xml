@@ -53,5 +53,9 @@
             android:id="@+id/editFragment"
             android:name="com.example.phone_book.ui.editContact.EditFragment"
             android:label="add_fragment"
-            tools:layout="@layout/add_fragment" />
+            tools:layout="@layout/add_fragment" >
+        <action
+                android:id="@+id/action_editFragment_to_detailsFragment"
+                app:destination="@id/detailsFragment" />
+    </fragment>
 </navigation>

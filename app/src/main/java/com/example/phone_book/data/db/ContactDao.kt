@@ -1,10 +1,7 @@
 package com.example.phone_book.data.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.phone_book.data.model.Contact
 
 @Dao
@@ -23,4 +20,10 @@ interface ContactDao {
 
     @Query("SELECT * FROM Contact WHERE firstName LIKE '%' || :name || '%'")
     fun findBy(name: String): LiveData<List<Contact>>
+
+    //@Query("UPDATE contact SET firstName = :firstName, lastName = :lastName, phone = :phone WHERE id = :id")
+    //fun update(firstName: String, lastName:String, phone: String, id: Int)
+
+    @Update
+    fun update(contact: Contact)
 }

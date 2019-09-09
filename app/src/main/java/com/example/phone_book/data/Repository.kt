@@ -29,4 +29,8 @@ class Repository(application: Application) {
     fun findContact(name: String): LiveData<List<Contact>>{
         return contactDao.findBy(name)
     }
+
+    fun updateContact(contact: Contact){
+        contactDao.update(contact)
+    }
 }

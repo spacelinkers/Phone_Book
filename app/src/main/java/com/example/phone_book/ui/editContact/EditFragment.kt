@@ -12,6 +12,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 import com.example.phone_book.R
 import com.example.phone_book.data.model.Contact
@@ -21,10 +23,12 @@ import kotlinx.android.synthetic.main.add_fragment.*
 class EditFragment : Fragment() {
 
     private lateinit var detailsViewModel: DetailsViewModel
+    private lateinit var editViewModel: EditViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         detailsViewModel = ViewModelProviders.of(this).get(DetailsViewModel::class.java)
+        editViewModel = ViewModelProviders.of(this).get(EditViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +59,7 @@ class EditFragment : Fragment() {
         fab_save_button.setOnClickListener {
             //close keyboard after pressing button.
             context?.hideKeyboard(view)
+            updateContact(contactId!!)
         }
     }
 
@@ -62,6 +67,30 @@ class EditFragment : Fragment() {
         first_name_edit_text.setText(contact?.firstName)
         last_name_edit_text.setText(contact?.lastName)
         contact_edit_text.setText(contact?.phone)
+    }
+
+    private fun updateContact(contactId: Int){
+        val contact = Contact(
+            first_name_edit_text.editableText.toString(),
+            last_name_edit_text.editableText.toString(),
+            contact_edit_text.editableText.toString(),
+            contactId
+        )
+
+        val infoBundle = Bundle()
+        infoBundle.putInt(getString(R.string.CONTACT_ID), contactId)
+        findNavController().popBackStack(R.id.editFragment, true)
+        findNavController().popBackStack(R.id.detailsFragment, true)
+
+        if(first_name_edit_text.text.toString()=="" || last_name_edit_text.toString()==""||contact_edit_text.toString()==""){
+            findNavController().navigate(R.id.detailsFragment, infoBundle)
+            Log.d("AAA", "Empty")
+        }
+        else{
+            editViewModel.editContact(contact)
+            Log.d("AAA", "Full")
+            findNavController().navigate(R.id.detailsFragment, infoBundle)
+        }
     }
 
     fun Context.hideKeyboard(view: View) {
