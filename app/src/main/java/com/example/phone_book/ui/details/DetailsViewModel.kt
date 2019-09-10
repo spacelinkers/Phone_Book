@@ -21,4 +21,8 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
         Log.i("AAA", ""+ contactDetails.value)
         return contactDetails
     }
+
+    fun setAddToFavourite(favouriteFlag: Int, id: Int){
+        contactRepository.updateFavourite(favouriteFlag, id)
+    }
 }

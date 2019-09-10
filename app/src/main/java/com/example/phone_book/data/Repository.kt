@@ -33,4 +33,8 @@ class Repository(application: Application) {
     fun updateContact(contact: Contact){
         contactDao.update(contact)
     }
+
+    fun updateFavourite(favouriteFlag: Int, id: Int){
+        contactDao.updateFavourite(favouriteFlag , id)
+    }
 }

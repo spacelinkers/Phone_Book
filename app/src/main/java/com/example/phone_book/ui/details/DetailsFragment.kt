@@ -80,9 +80,11 @@ class DetailsFragment : Fragment() {
             if(contact.favouriteFlag == 0){
                 Log.d("AAA", "Click C")
                 favouriteButton.setBackgroundResource(R.drawable.ic_favourite)
+                detailsViewModel.setAddToFavourite(1, contact.id)
             } else{
                 Log.d("AAA", "Click D")
                 favouriteButton.setBackgroundResource(R.drawable.ic_favourite_outilne)
+                detailsViewModel.setAddToFavourite(0, contact.id)
             }
         }
     }

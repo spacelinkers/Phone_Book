@@ -21,9 +21,9 @@ interface ContactDao {
     @Query("SELECT * FROM Contact WHERE firstName LIKE '%' || :name || '%'")
     fun findBy(name: String): LiveData<List<Contact>>
 
-    //@Query("UPDATE contact SET firstName = :firstName, lastName = :lastName, phone = :phone WHERE id = :id")
-    //fun update(firstName: String, lastName:String, phone: String, id: Int)
-
     @Update
     fun update(contact: Contact)
+
+    @Query("UPDATE contact SET favouriteFlag = :favouriteFlag WHERE id = :id")
+    fun updateFavourite(favouriteFlag: Int, id: Int)
 }
