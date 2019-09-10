@@ -61,7 +61,8 @@ class AddContactFragment : Fragment() {
         val contact = Contact(
             first_name_edit_text.editableText.toString(),
             last_name_edit_text.editableText.toString(),
-            contact_edit_text.editableText.toString()
+            contact_edit_text.editableText.toString(),
+            0
         )
         if(first_name_edit_text.text.toString()=="" || last_name_edit_text.toString()==""||contact_edit_text.toString()==""){
             Navigation.findNavController(view!!).navigateUp()
