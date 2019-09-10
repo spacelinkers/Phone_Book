@@ -32,6 +32,9 @@
         <action
                 android:id="@+id/action_navigation_favourite_to_searchFragment"
                 app:destination="@id/searchFragment" />
+        <action
+                android:id="@+id/action_navigation_favourite_to_detailsFragment"
+                app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
             android:id="@+id/detailsFragment"

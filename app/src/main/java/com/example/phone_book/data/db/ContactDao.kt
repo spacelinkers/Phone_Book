@@ -9,6 +9,9 @@ interface ContactDao {
     @Query("SELECT * FROM Contact ORDER BY firstName")
     fun getAll(): LiveData<List<Contact>>
 
+    @Query("SELECT * FROM Contact WHERE favouriteFlag = :on ORDER BY firstName ")
+    fun getAllFavourite(on: Int): LiveData<List<Contact>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(contact: Contact)
 

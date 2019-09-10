@@ -43,6 +43,7 @@ class EditFragment : Fragment() {
         titleText.setText(getString(R.string.edit_contact))
 
         val contactId = arguments?.getInt(getString(R.string.CONTACT_ID))
+        val contactFlag = arguments?.getInt(getString(R.string.CONTACT_FLAG))
         Log.d("BBB", ""+ contactId.toString())
         contactId?.let {
             detailsViewModel.getContactDetails(contactId).observe(this, Observer { contactDetails ->
@@ -59,7 +60,7 @@ class EditFragment : Fragment() {
         fab_save_button.setOnClickListener {
             //close keyboard after pressing button.
             context?.hideKeyboard(view)
-            updateContact(contactId!!)
+            updateContact(contactId!!, contactFlag!!)
         }
     }
 
@@ -69,11 +70,12 @@ class EditFragment : Fragment() {
         contact_edit_text.setText(contact?.phone)
     }
 
-    private fun updateContact(contactId: Int){
+    private fun updateContact(contactId: Int, contactFlag: Int){
         val contact = Contact(
             first_name_edit_text.editableText.toString(),
             last_name_edit_text.editableText.toString(),
             contact_edit_text.editableText.toString(),
+            contactFlag,
             contactId
         )
 

@@ -18,6 +18,10 @@ class Repository(application: Application) {
         return contactDao.getAll()
     }
 
+    fun getAllFavouriteContact(on: Int): LiveData<List<Contact>>{
+        return contactDao.getAllFavourite(on)
+    }
+
     fun insertContact(contact: Contact){
         contactDao.insert(contact)
     }

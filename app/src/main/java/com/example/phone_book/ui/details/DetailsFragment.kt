@@ -34,11 +34,13 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var favouriteFlag: Int = 0
         val contactId = arguments!!.getInt(getString(R.string.CONTACT_ID))
         Log.d("AAA", ""+ contactId.toString())
 
         contactId.let {
             detailsViewModel.getContactDetails(contactId).observe(this, Observer { contactDetails ->
+                favouriteFlag = contactDetails.favouriteFlag
                 populateContactDetails(contactDetails)
                 dialInit(contactDetails)
                 addToFavourite(contactDetails, view)
@@ -48,6 +50,7 @@ class DetailsFragment : Fragment() {
         edit_contact_button.setOnClickListener{
             val infoBundle = Bundle()
             infoBundle.putInt(getString(R.string.CONTACT_ID), contactId)
+            infoBundle.putInt(getString(R.string.CONTACT_FLAG), favouriteFlag)
             findNavController().navigate(R.id.action_detailsFragment_to_editFragment, infoBundle)
         }
     }
